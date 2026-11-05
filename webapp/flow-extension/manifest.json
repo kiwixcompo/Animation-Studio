@@ -1,0 +1,48 @@
+{
+   "action": {
+      "default_icon": {
+         "128": "icons/icon-128.png",
+         "16": "icons/icon-16.png",
+         "32": "icons/icon-32.png",
+         "48": "icons/icon-48.png"
+      },
+      "default_title": "Flow Connector"
+   },
+   "background": {
+      "service_worker": "service-worker-loader.js",
+      "type": "module"
+   },
+   "content_scripts": [ {
+      "js": [ "assets/index.ts-loader-fjYmorgJ.js" ],
+      "matches": [ "https://flow.google.com/*", "https://labs.google/*" ],
+      "run_at": "document_idle"
+   }, {
+      "js": [ "assets/result-capture-flow.ts-loader-Bi4yRDbe.js" ],
+      "matches": [ "https://flow.google.com/*", "https://labs.google/*" ],
+      "run_at": "document_start",
+      "world": "MAIN"
+   } ],
+   "description": "Connect your coding agent to Google Flow. Bulk image and video generation, no API key. Not affiliated with Google.",
+   "host_permissions": [ "https://flow.google.com/*", "https://labs.google/*", "https://flow-connector.flowconnector.workers.dev/*", "http://127.0.0.1/*", "http://localhost/*" ],
+   "icons": {
+      "128": "icons/icon-128.png",
+      "16": "icons/icon-16.png",
+      "32": "icons/icon-32.png",
+      "48": "icons/icon-48.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAg0FodlD40XAgNYNH2PDlxlQ4j5ttN3QFc2X9/W+aql9svBf9DI/z5B0WBbqH+kD6KGNTnr3vQPOODOBUddxhn4smiSBtbRF6s8qhT12eSXKFTdIOSAXtH/aPmXan58ggAHHXLqNuYgy2tkqkcX8WFcThfeUk4hvGapGWvq+JCGmXoLg4Upx62ooGHywqRn01ifHIRWCATiTu7fMlknxaliiwfPAueD8xf3M4ke+y+dhAzwwmQP6YwiWH8WxdwA6nhp7c5WpQho3ggitGuoW3WAc5BFEY0CEnpPRXGGcAvzi9djJe4xD2Gf+Mlzo+kklVX79uH6KaCNV7vnnfReVxDQIDAQAB",
+   "manifest_version": 3,
+   "name": "Flow Connector — connect your coding agent to Google Flow image & video",
+   "permissions": [ "sidePanel", "storage", "downloads", "tabs", "scripting", "alarms", "debugger" ],
+   "short_name": "Flow Connect",
+   "side_panel": {
+      "default_path": "src/sidepanel/index.html"
+   },
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.3.4",
+   "web_accessible_resources": [ {
+      "matches": [ "https://flow.google.com/*", "https://labs.google/*" ],
+      "resources": [ "assets/remote-selectors-DauVyE_a.js", "assets/flow-url-CvYu-sZP.js", "assets/links-Bc5QuK_F.js", "assets/index.ts--a0w5aTj.js", "assets/result-capture-flow.ts-Cu6ONkqg.js" ],
+      "use_dynamic_url": false
+   } ]
+}

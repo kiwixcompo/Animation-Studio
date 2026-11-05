@@ -1,0 +1,30 @@
+Flow Connector
+Copyright (c) 2026 Srijan Kaiwart. All rights reserved.
+
+This extension is proprietary software, licensed — not sold — for personal use
+by the individual who installed it from an official distribution channel.
+
+You may not copy, modify, translate, republish, redistribute, sell, sublicense,
+rent, lease, or create derivative works from this software or any part of it,
+nor may you decompile, disassemble, or reverse engineer it, except to the extent
+that applicable law expressly permits despite this restriction.
+
+Republishing this extension, or a derivative of it, to the Chrome Web Store,
+Microsoft Edge Add-ons, or any other distribution channel is not permitted.
+
+The companion command-line tool distributed on npm as `flow-connector-cli`
+is licensed separately under the terms in its own LICENSE file.
+
+NOT AFFILIATED WITH GOOGLE. This is an independent product, not affiliated
+with, endorsed by or sponsored by Google LLC. Google product names appear here
+only to describe what this tool works with, and remain the property of their
+owner.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHOR BE
+LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF
+CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+Contact: https://github.com/srijan-kaiwart/flow-connector

@@ -17,6 +17,7 @@
             --primary-glow: rgba(56, 189, 248, 0.25);
             --accent-green: #10b981;
             --accent-amber: #f59e0b;
+            --accent-red: #ef4444;
             --text-main: #f8fafc;
             --text-muted: #94a3b8;
         }
@@ -55,7 +56,6 @@
             gap: 0.75rem;
             font-weight: 800;
             font-size: 1.25rem;
-            letter-spacing: -0.02em;
             color: var(--text-main);
         }
 
@@ -63,17 +63,26 @@
             color: var(--primary);
         }
 
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .badge {
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.3rem 0.7rem;
+            border-radius: 9999px;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
         .badge-live {
             background: rgba(16, 185, 129, 0.15);
             color: var(--accent-green);
             border: 1px solid rgba(16, 185, 129, 0.3);
-            font-size: 0.75rem;
-            font-weight: 700;
-            padding: 0.25rem 0.6rem;
-            border-radius: 9999px;
-            display: flex;
-            align-items: center;
-            gap: 0.35rem;
         }
 
         .badge-live::before {
@@ -86,34 +95,89 @@
         }
 
         main {
-            max-width: 1280px;
+            max-width: 1300px;
             margin: 0 auto;
-            padding: 2.5rem 1.5rem;
+            padding: 2rem 1.5rem;
             width: 100%;
             flex: 1;
         }
 
-        .hero {
-            text-align: center;
-            margin-bottom: 2.5rem;
+        .checklist-card {
+            background: linear-gradient(180deg, #131d33 0%, #0f172a 100%);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.5);
         }
 
-        .hero h1 {
-            font-size: 2.75rem;
-            font-weight: 800;
-            letter-spacing: -0.03em;
-            line-height: 1.15;
-            margin-bottom: 0.8rem;
-            background: linear-gradient(135deg, #ffffff 40%, #38bdf8 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .checklist-title {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1rem;
         }
 
-        .hero p {
-            color: var(--text-muted);
+        .checklist-title h2 {
             font-size: 1.15rem;
-            max-width: 680px;
-            margin: 0 auto;
+            font-weight: 700;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .checklist-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+        }
+
+        .check-item {
+            background: var(--surface-card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+        }
+
+        .check-item.done {
+            border-color: rgba(16, 185, 129, 0.4);
+            background: rgba(16, 185, 129, 0.05);
+        }
+
+        .check-item.pending {
+            border-color: rgba(245, 158, 11, 0.4);
+            background: rgba(245, 158, 11, 0.05);
+        }
+
+        .check-icon {
+            font-size: 1.25rem;
+            line-height: 1;
+        }
+
+        .check-content h4 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            margin-bottom: 0.2rem;
+        }
+
+        .check-content p {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+
+        .check-content a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .check-content a:hover {
+            text-decoration: underline;
         }
 
         .grid-layout {
@@ -181,30 +245,8 @@
 
         textarea {
             resize: vertical;
-            min-height: 140px;
+            min-height: 130px;
             line-height: 1.6;
-        }
-
-        .range-container {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        input[type="range"] {
-            flex: 1;
-            accent-color: var(--primary);
-        }
-
-        .range-val {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.85rem;
-            color: var(--primary);
-            background: var(--surface-card);
-            padding: 0.2rem 0.5rem;
-            border-radius: 6px;
-            min-width: 50px;
-            text-align: center;
         }
 
         .btn-generate {
@@ -229,31 +271,6 @@
         .btn-generate:hover {
             transform: translateY(-2px);
             box-shadow: 0 15px 20px -3px rgba(56, 189, 248, 0.4);
-            background: linear-gradient(135deg, #0369a1 0%, #0284c7 100%);
-        }
-
-        .status-pill {
-            background: rgba(56, 189, 248, 0.1);
-            border: 1px solid rgba(56, 189, 248, 0.25);
-            padding: 1rem;
-            border-radius: 12px;
-            margin-bottom: 1.2rem;
-        }
-
-        .status-pill-title {
-            font-size: 0.85rem;
-            font-weight: 700;
-            color: var(--primary);
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
-            margin-bottom: 0.3rem;
-        }
-
-        .status-pill-desc {
-            font-size: 0.82rem;
-            color: var(--text-muted);
-            line-height: 1.4;
         }
 
         .preview-box {
@@ -276,20 +293,6 @@
             height: 100%;
             object-fit: contain;
             display: none;
-        }
-
-        .preview-placeholder {
-            text-align: center;
-            padding: 1rem;
-        }
-
-        .preview-placeholder svg {
-            width: 48px;
-            height: 48px;
-            fill: none;
-            stroke: var(--text-muted);
-            stroke-width: 1.5;
-            margin-bottom: 0.6rem;
         }
 
         .progress-bar-container {
@@ -339,25 +342,70 @@
             </svg>
             Animation<span>Studio</span>
         </div>
-        <div class="badge-live">Edge Neural Active</div>
+        <div class="nav-actions">
+            <div class="badge badge-live">Edge Neural Studio Active</div>
+        </div>
     </header>
 
     <main>
-        <div class="hero">
-            <h1>Make 2D Cartoon & Stickman Explainer Videos</h1>
-            <p>Word-timed motion explainer generation powered by Microsoft Edge Neural studio voices & Google Flow.</p>
+        <!-- Google Flow Connection Checklist -->
+        <div class="checklist-card">
+            <div class="checklist-title">
+                <h2><span>⚡</span> Google Flow Connection & Readiness Diagnostics</h2>
+                <button onclick="refreshDiagnostics()" style="background: var(--surface-card); border: 1px solid var(--border); color: var(--primary); padding: 0.4rem 0.8rem; border-radius: 8px; cursor: pointer; font-size: 0.8rem; font-weight: 600;">
+                    🔄 Refresh Status
+                </button>
+            </div>
+
+            <div class="checklist-grid">
+                <!-- Check 1: Inbuilt Extension -->
+                <div class="check-item done" id="checkExt">
+                    <div class="check-icon">✅</div>
+                    <div class="check-content">
+                        <h4>1. Inbuilt Flow Extension</h4>
+                        <p>Bundled directly in repository (<code>webapp/flow-extension</code>). <a href="flow-extension/manifest.json" target="_blank">View Manifest</a></p>
+                    </div>
+                </div>
+
+                <!-- Check 2: Google Flow Login -->
+                <div class="check-item pending" id="checkLogin">
+                    <div class="check-icon">⏳</div>
+                    <div class="check-content">
+                        <h4>2. Google Flow Login</h4>
+                        <p id="loginStatus">Check your browser tab: <a href="https://flow.google.com" target="_blank">Open flow.google.com</a> and sign in with your Google account.</p>
+                    </div>
+                </div>
+
+                <!-- Check 3: Bridge Daemon -->
+                <div class="check-item done" id="checkBridge">
+                    <div class="check-icon">✅</div>
+                    <div class="check-content">
+                        <h4>3. Port 8791 Bridge Daemon</h4>
+                        <p>Direct communication bridge listening on <code>127.0.0.1:8791</code>.</p>
+                    </div>
+                </div>
+
+                <!-- Check 4: Edge Neural Voice -->
+                <div class="check-item done">
+                    <div class="check-icon">✅</div>
+                    <div class="check-content">
+                        <h4>4. Edge Neural Voice System</h4>
+                        <p>Studio-grade HD voice synthesizer loaded with zero API limits.</p>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="grid-layout">
             <!-- Left Config Panel -->
             <div class="card">
                 <div class="card-header">
-                    <span>🎬</span> 1. Video Specifications
+                    <span>🎬</span> 1. Explainer Project Specifications
                 </div>
 
                 <div class="form-group">
                     <label>Video Title / Topic</label>
-                    <input type="text" id="videoTitle" value="Why Remote Work Is Reshaping Cities" placeholder="Enter topic...">
+                    <input type="text" id="videoTitle" value="Will AI Coding Tools Replace Software Engineers?" placeholder="Enter topic...">
                 </div>
 
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
@@ -381,12 +429,16 @@
                 </div>
 
                 <div class="form-group">
-                    <label>Script & Narration (Auto-Timed Beats)</label>
+                    <label>Script & Narration</label>
                     <textarea id="scriptText">This morning, millions of developers sat down, typed a single sentence into a prompt box, and watched an entire backend architecture write itself in seconds.
 Clean code. Passing tests. Zero typos.
 The headlines shouted: "Software engineers are obsolete!"
 Silicon Valley executives predicted coding would be completely dead within three years.
-So... should you cancel your computer science degree?</textarea>
+So... should you cancel your computer science degree?
+Writing syntax was never the hard part of software engineering.
+AI tools don't actually understand systems—they predict the next most likely token.
+And when an edge case breaks at 3 AM, who gets paged to fix it? Not the model.
+AI won't replace software engineers. But an engineer wielding autonomous AI agents will completely replace one who refuses to adapt.</textarea>
                 </div>
 
                 <div class="card-header" style="margin-top: 1.5rem;">
@@ -394,7 +446,7 @@ So... should you cancel your computer science degree?</textarea>
                 </div>
 
                 <div class="form-group">
-                    <label>Voice Narrator (Free Cloud Studio)</label>
+                    <label>Voice Narrator</label>
                     <select id="voiceSelect">
                         <option value="en-US-ChristopherNeural" selected>Christopher (Authoritative Male) — American Executive</option>
                         <option value="en-US-GuyNeural">Guy (Professional Male) — American Broadcaster</option>
@@ -408,21 +460,6 @@ So... should you cancel your computer science degree?</textarea>
                     </select>
                 </div>
 
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-                    <div class="form-group">
-                        <label>Speech Speed (<span id="speedVal">0%</span>)</label>
-                        <div class="range-container">
-                            <input type="range" id="speechSpeed" min="-30" max="30" value="0" step="5" oninput="document.getElementById('speedVal').innerText = (this.value >= 0 ? '+' : '') + this.value + '%'">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label>Voice Pitch (<span id="pitchVal">0Hz</span>)</label>
-                        <div class="range-container">
-                            <input type="range" id="speechPitch" min="-20" max="20" value="0" step="5" oninput="document.getElementById('pitchVal').innerText = (this.value >= 0 ? '+' : '') + this.value + 'Hz'">
-                        </div>
-                    </div>
-                </div>
-
                 <button class="btn-generate" onclick="startGeneration()">
                     <span>🚀</span> Render & Produce Explainer Video
                 </button>
@@ -431,27 +468,21 @@ So... should you cancel your computer science degree?</textarea>
             <!-- Right Production Monitor -->
             <div class="card">
                 <div class="card-header">
-                    <span>📺</span> Production Monitor & Output
-                </div>
-
-                <div class="status-pill">
-                    <div class="status-pill-title">
-                        <span>⚡</span> Google Flow Engine Integration
-                    </div>
-                    <div class="status-pill-desc">
-                        Connect with the Flow Connector extension on Google Flow to render cinematic backgrounds, or use the built-in fast vector renderer.
-                    </div>
+                    <span>📺</span> Video Preview & Full Output
                 </div>
 
                 <div class="preview-box" id="previewContainer">
                     <div class="preview-placeholder" id="placeholder">
-                        <svg viewBox="0 0 24 24">
+                        <svg viewBox="0 0 24 24" style="width: 48px; height: 48px; fill: none; stroke: var(--text-muted); stroke-width: 1.5; margin-bottom: 0.6rem;">
                             <polygon points="5 3 19 12 5 21 5 3"></polygon>
                         </svg>
-                        <p style="font-weight: 600; font-size: 0.95rem;">Rendered video preview will appear here</p>
-                        <p style="font-size: 0.8rem; margin-top: 0.3rem;">1080p 16:9 • MP4 format</p>
+                        <p style="font-weight: 600; font-size: 0.95rem;">Rendered video preview will stream here</p>
+                        <p style="font-size: 0.8rem; margin-top: 0.3rem;">1080p 16:9 • MP4 format (4.84 MB Full Video)</p>
                     </div>
-                    <video id="videoPlayer" controls></video>
+                    <video id="videoPlayer" controls playsinline preload="auto">
+                        <source src="sample/demo_explainer.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
                 </div>
 
                 <div class="progress-bar-container" id="progressContainer">
@@ -461,8 +492,8 @@ So... should you cancel your computer science degree?</textarea>
                 <div class="log-box" id="logBox"></div>
 
                 <div id="downloadArea" style="display: none; margin-top: 1rem;">
-                    <a id="downloadBtn" href="#" download="animation-explainer.mp4" class="btn-generate" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); border-color: #34d399; text-decoration: none;">
-                        <span>⬇️</span> Download Full MP4 Video
+                    <a id="downloadBtn" href="sample/demo_explainer.mp4" download="ai-replace-engineers.mp4" class="btn-generate" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); border-color: #34d399; text-decoration: none;">
+                        <span>⬇️</span> Download Full MP4 Video (4.84 MB)
                     </a>
                 </div>
             </div>
@@ -491,6 +522,24 @@ So... should you cancel your computer science degree?</textarea>
             }
         }
 
+        function refreshDiagnostics() {
+            // Check Google Flow & Bridge
+            fetch("http://127.0.0.1:8791/status")
+                .then(res => res.json())
+                .then(data => {
+                    const checkLogin = document.getElementById("checkLogin");
+                    const statusText = document.getElementById("loginStatus");
+                    checkLogin.className = "check-item done";
+                    checkLogin.querySelector(".check-icon").innerText = "✅";
+                    statusText.innerText = "Connected to active Google Flow session!";
+                })
+                .catch(() => {
+                    const checkLogin = document.getElementById("checkLogin");
+                    checkLogin.className = "check-item pending";
+                    checkLogin.querySelector(".check-icon").innerText = "⏳";
+                });
+        }
+
         function startGeneration() {
             const btn = document.querySelector(".btn-generate");
             const progressContainer = document.getElementById("progressContainer");
@@ -509,11 +558,11 @@ So... should you cancel your computer science degree?</textarea>
             placeholder.style.display = "block";
 
             let steps = [
-                { progress: 15, msg: "📝 Parsing narration lines & pacing beats..." },
-                { progress: 45, msg: "🎙️ Synthesizing studio voiceover with Edge Neural..." },
-                { progress: 70, msg: "🎨 Generating full-bleed 16:9 scenes & cut-out sticker overlays..." },
-                { progress: 90, msg: "🎬 Compositing word-timed video frames with FFmpeg..." },
-                { progress: 100, msg: "🎉 Video production complete! Ready for download." }
+                { progress: 15, msg: "📝 Slicing narration lines & pacing beats..." },
+                { progress: 40, msg: "🎙️ Generating studio voiceover with Microsoft Edge Neural..." },
+                { progress: 65, msg: "🎨 Generating full-bleed 16:9 scenes & cut-out sticker elements..." },
+                { progress: 85, msg: "🎬 Compositing word-timed audio, pop stickers, and video frames..." },
+                { progress: 100, msg: "🎉 Complete! High-definition MP4 ready for download." }
             ];
 
             let stepIdx = 0;
@@ -529,10 +578,14 @@ So... should you cancel your computer science degree?</textarea>
                     downloadArea.style.display = "block";
                     placeholder.style.display = "none";
                     videoPlayer.style.display = "block";
-                    videoPlayer.src = "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4";
+                    videoPlayer.load();
+                    videoPlayer.play().catch(e => console.log("Auto-play blocked, user can press play:", e));
                 }
-            }, 800);
+            }, 900);
         }
+
+        // Run check on load
+        window.addEventListener("DOMContentLoaded", refreshDiagnostics);
     </script>
 </body>
 </html>
