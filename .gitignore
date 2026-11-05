@@ -1,0 +1,26 @@
+# Dependencies and environments
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+.env.local
+.venv
+env/
+venv/
+node_modules/
+
+# Generated runtime outputs, takes, and temporary cache
+StickmanHybrid/
+takes/
+frames/
+*.mp4
+*.wav
+
+# Ignore heavy bundled sound library from git repository to ensure rapid git sync & Netlify CI builds
+skills/vox-doc-sound/music/
+skills/vox-doc-sound/sfx/
+
+# OS metadata
+.DS_Store
+Thumbs.db

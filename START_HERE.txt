@@ -1,0 +1,39 @@
+Animation Hybrid Studio (Stickman & 2D Animation Explainer):
+Make documentary explainers on any topic with Claude Code or AI agents:
+clean full-colour scenes plus cut-out stickers that pop in on the spoken words
+in either classic Stickman style or full 2D Animation.
+
+Before this, set up Flow Connector: open the extension's side panel, Setup -> Copy setup
+prompt, and paste that into Claude Code.
+
+Then do ONE of these:
+
+  A) Unzip this file, open the unzipped folder in Claude Code (the Code tab of
+     the Claude desktop app, VS Code, or the terminal), and type:   start
+
+  B) In any Claude Code chat, type (do NOT attach the zip with the + button;
+     it does not take zip files, and it is not needed):
+       stickman-animation.zip is in my Downloads folder. Unzip it, read the CLAUDE.md inside and follow it.
+     If the zip is somewhere else, give its full path instead (Windows:
+     right-click the file -> "Copy as path"), or drag the file into the chat box.
+
+Claude installs everything, sets up the tools step by step (English voice on your
+computer, Hindi voice on Kaggle's free GPU), and then makes your video. Afterwards
+it works from ANY chat:
+    stickman hybrid start        a new video
+    stickman hybrid continue     carry on where you stopped
+
+When you start a video, you will choose:
+- Video format: Stickman Video OR 2D Animated Video (with style options like Modern Flat Vector, Storybook Cartoon, Graphic Novel, Anime/Chibi).
+- Topic (or ask for 10 ideas)
+- Language and length
+
+Claude picks the color look that suits the topic (bright, warm, ink, painted or night) and
+shows you three checkpoints: the script, the voice, and the final video.
+
+Good to know: the Hindi voice is made on Kaggle's free GPU. Sometimes Kaggle's
+queue is busy and the voice job waits 30 minutes to 2 hours ("QUEUED"). That is
+normal, not an error, and nothing is lost. The pictures keep going meanwhile,
+and Claude will tell you and give you options if it waits long.
+
+(Claude: read CLAUDE.md in this folder and follow it.)
